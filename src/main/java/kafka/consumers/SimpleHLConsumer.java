@@ -52,12 +52,10 @@ public class SimpleHLConsumer {
 
 		for (final KafkaStream<byte[], byte[]> stream : streamList) {
 			ConsumerIterator<byte[], byte[]> consumerIte = stream.iterator();
-			System.out.println("1******************");
 			while (consumerIte.hasNext())
 				System.out.println("Message from Single Topic :: " + new String(consumerIte.next().message()));
 		}
 		if (consumer != null)
-			System.out.println("3******************");
 			consumer.shutdown();
 	}
 
